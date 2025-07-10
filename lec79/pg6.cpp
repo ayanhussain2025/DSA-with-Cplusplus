@@ -1,0 +1,2 @@
+//link1(delete at position x , normal or recursion you can use both) : https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab
+// link2(delete without head pointer) : https://www.geeksforgeeks.org/problems/delete-without-head-pointer/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab

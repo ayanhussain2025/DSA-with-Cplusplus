@@ -1,0 +1,4 @@
+Original Data
+14 21 4 7 9 
+Sorted data
+4 7 9 14 21 

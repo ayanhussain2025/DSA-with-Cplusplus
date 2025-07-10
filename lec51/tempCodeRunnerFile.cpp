@@ -1,0 +1,1 @@
+ cout<<n<<" remaining days in birthday"<<endl;
