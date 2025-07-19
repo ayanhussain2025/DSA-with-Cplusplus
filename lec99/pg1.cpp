@@ -83,6 +83,9 @@ class dequeue
             Node *temp=front;
             front=front->next;
             delete temp;
+            if(front)
+            front->prev=NULL;
+            else rear=NULL;
         }
     }
 
@@ -100,6 +103,9 @@ class dequeue
             Node *temp=rear;
             rear=rear->prev;
             delete temp;
+            if(rear)
+            rear->next=NULL;
+            else front=NULL;
         }
     }
 
