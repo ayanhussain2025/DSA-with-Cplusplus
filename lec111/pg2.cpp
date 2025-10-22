@@ -30,6 +30,19 @@ Node* insert(Node* root,int target) //here we can do pass by reference to save s
 
     return root; //root ke ander hamesha root ka adress hi jarha hoga
 }
+
+void Inorder(Node* root)
+{
+    if(!root)
+    return;
+
+    //left
+    Inorder(root->left);
+    //node
+    cout<<root->data<<" ";
+    //right
+    Inorder(root->right);
+}
 int main()
 {
     int arr[]={3,7,4,1,6,8};
@@ -40,4 +53,7 @@ int main()
     // we create here our tree but how we know that it get created successfully, for that we have to know traversal (pg2.cpp)
     //Time complexity for creating the whole tree = O(h^2) = O(n^2)
     //Space complexity for creating the whole tree = O(h) = O(n) = maximum height of the tree
+
+    //Inorder Traversal(LNR)
+    Inorder(root);
 }
