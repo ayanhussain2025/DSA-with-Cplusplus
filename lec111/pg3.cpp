@@ -1,0 +1,61 @@
+//Searching in Binary Search Tree
+#include<iostream>
+using namespace std;
+
+//creating Node class 
+class Node
+{
+    public:
+    int data;
+    Node* left;
+    Node* right;
+    Node(int value)
+    {
+        data=value;
+        left=right=NULL;
+    }
+};
+
+Node* insert(Node* root,int target) //here we can do pass by reference to save some space 
+{
+    if(!root)
+    {
+        Node* temp = new Node(target);
+        return temp;
+    }
+
+    if(target<root->data)
+    root->left = insert(root->left,target);
+    else root->right = insert(root->right,target); //Time complexity for each function call = O(h) = O(n); 
+
+    return root; //root ke ander hamesha root ka adress hi jarha hoga
+}
+
+bool Search(Node* root,int key)
+{
+    if(!root)
+    return 0;
+
+    if(root->data == key)
+    return 1;
+
+    if(root->data>key)
+    return Search(root->left,key);
+    else return Search(root->right,key);
+}
+int main()
+{
+    int arr[]={3,7,4,1,6,8};
+    Node* root=NULL;
+    //inserting element one by one from array using recursive function
+    for(int i=0;i<6;i++)
+    root=insert(root,arr[i]); 
+    // we create here our tree but how we know that it get created successfully, for that we have to know traversal (pg2.cpp)
+    //Time complexity for creating the whole tree = O(h^2) = O(n^2)
+    //Space complexity for creating the whole tree = O(h) = O(n) = maximum height of the tree
+
+
+    //Searhing in binary tree
+    int key = 4;
+    cout<<Search(root,key);
+}
